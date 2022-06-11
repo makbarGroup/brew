@@ -16,7 +16,7 @@ gem "simplecov", require: false
 # vendored gems
 gem "activesupport"
 gem "concurrent-ruby"
-gem "mechanize"
+gem "mechanize", ">= 2.8.5"
 gem "plist"
 gem "rubocop-performance"
 gem "rubocop-rspec"
