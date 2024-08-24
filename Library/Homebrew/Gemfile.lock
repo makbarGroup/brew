@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
-    ast (2.4.0)
+    ast (2.4.2)
     concurrent-ruby (1.1.6)
     connection_pool (2.2.2)
     coveralls (0.8.23)
@@ -25,8 +25,8 @@ GEM
       domain_name (~> 0.5)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    jaro_winkler (1.5.4)
     json (2.3.0)
+    language_server-protocol (3.17.0.3)
     mechanize (2.7.6)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
@@ -48,15 +48,19 @@ GEM
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     ntlm-http (0.1.1)
-    parallel (1.19.1)
+    parallel (1.26.3)
     parallel_tests (2.31.0)
       parallel
-    parser (2.7.0.3)
-      ast (~> 2.4.0)
+    parser (3.3.4.2)
+      ast (~> 2.4.1)
+      racc
     plist (3.5.0)
-    rainbow (3.0.0)
+    racc (1.8.1)
+    rainbow (3.1.1)
     rdiscount (2.2.0.1)
-    rexml (3.2.4)
+    regexp_parser (2.9.2)
+    rexml (3.3.6)
+      strscan
     ronn (0.7.3)
       hpricot (>= 0.8.2)
       mustache (>= 0.7.0)
@@ -81,25 +85,32 @@ GEM
     rspec-support (3.9.2)
     rspec-wait (0.0.9)
       rspec (>= 3, < 4)
-    rubocop (0.80.0)
-      jaro_winkler (~> 1.5.1)
+    rubocop (1.65.1)
+      json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
-      parser (>= 2.7.0.1)
+      parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
-      rexml
+      regexp_parser (>= 2.4, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.31.1, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 1.7)
-    rubocop-performance (1.5.2)
-      rubocop (>= 0.71.0)
-    rubocop-rspec (1.38.1)
-      rubocop (>= 0.68.1)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.32.1)
+      parser (>= 3.3.1.0)
+    rubocop-performance (1.21.1)
+      rubocop (>= 1.48.1, < 2.0)
+      rubocop-ast (>= 1.31.1, < 2.0)
+    rubocop-rspec (3.0.4)
+      rubocop (~> 1.61)
     ruby-macho (2.2.0)
-    ruby-progressbar (1.10.1)
+    ruby-progressbar (1.13.0)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
+    strscan (3.1.0)
     sync (0.5.0)
     term-ansicolor (1.7.1)
       tins (~> 1.0)
@@ -112,7 +123,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.6)
-    unicode-display_width (1.6.1)
+    unicode-display_width (2.5.0)
     webrobots (0.1.2)
     zeitwerk (2.2.2)
 
@@ -131,11 +142,11 @@ DEPENDENCIES
   rspec-its
   rspec-retry
   rspec-wait
-  rubocop
-  rubocop-performance
-  rubocop-rspec
+  rubocop (>= 0.80.1)
+  rubocop-performance (>= 1.6.0)
+  rubocop-rspec (>= 1.39.0)
   ruby-macho
   simplecov
 
 BUNDLED WITH
-   1.17.2
+   1.17.3
