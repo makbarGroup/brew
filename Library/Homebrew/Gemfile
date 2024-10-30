@@ -10,7 +10,7 @@ gem "rspec"
 gem "rspec-its", require: false
 gem "rspec-retry", require: false
 gem "rspec-wait", require: false
-gem "rubocop"
+gem "rubocop", ">= 1.66.0"
 gem "simplecov", require: false
 
 # vendored gems
